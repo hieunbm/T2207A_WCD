@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.entities.Student" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 1/22/2024
@@ -17,29 +18,20 @@
      <thead>
      <tr>
          <th scope="col">#</th>
-         <th scope="col">First</th>
-         <th scope="col">Last</th>
-         <th scope="col">Handle</th>
+         <th scope="col">Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Address</th>
      </tr>
      </thead>
      <tbody>
+     <% for (Student s : (List<Student>)request.getAttribute("students")){ %>
      <tr>
-         <th scope="row">1</th>
-         <td>Mark</td>
-         <td>Otto</td>
-         <td>@mdo</td>
+         <th scope="row"><%= s.id %></th>
+         <td><%= s.name%></td>
+         <td><%= s.email%></td>
+         <td><%=s.address%></td>
      </tr>
-     <tr>
-         <th scope="row">2</th>
-         <td>Jacob</td>
-         <td>Thornton</td>
-         <td>@fat</td>
-     </tr>
-     <tr>
-         <th scope="row">3</th>
-         <td colspan="2">Larry the Bird</td>
-         <td>@twitter</td>
-     </tr>
+     <%}%>
      </tbody>
  </table>
 </body>

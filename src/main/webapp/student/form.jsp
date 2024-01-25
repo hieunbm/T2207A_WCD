@@ -1,32 +1,44 @@
-<%--
+<%@ page import="com.entities.Student" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
-  User: Admin
-  Date: 1/22/2024
-  Time: 5:05 PM
+  User: quanghoatrinh
+  Date: 22/01/2024
+  Time: 16:24
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+  <title>Students</title>
   <jsp:include page="/layout/css.jsp"/>
 </head>
 <body>
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<jsp:include page="/layout/header.jsp"/>
+<div class="container">
+  <h1>Add Student Demo</h1>
+  <!--  Table students -->
+  <div class="row">
+    <div class="col-6">
+      <form method="post" action="create">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Full name</label>
+          <input type="text" name="name" class="form-control" aria-describedby="emailHelp"/>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Address</label>
+          <input type="text" name="address" class="form-control" aria-describedby="emailHelp"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+
+
 </body>
 </html>

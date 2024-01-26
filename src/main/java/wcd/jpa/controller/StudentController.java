@@ -35,4 +35,27 @@ public class StudentController extends HttpServlet {
             System.out.println(e.getMessage());
         }
     }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String entityId = req.getParameter("id");
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+            Student student = session.get(Student.class, Integer.parseInt(entityId));
+            if (student != null) {
+                session.delete(student);
+            }
+            session.getTransaction().commit();
+            resp.setStatus(200);
+            return;
+        }catch (Exception e){
+            resp.setStatus(403);
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req,resp);
+    }
 }
+

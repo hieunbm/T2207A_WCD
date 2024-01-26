@@ -23,6 +23,7 @@
          <th scope="col">Email</th>
          <th scope="col">Address</th>
          <th scope="col">Action</th>
+         <th scope="col">Action</th>
      </tr>
      </thead>
      <tbody>
@@ -33,9 +34,24 @@
          <td><%= s.email%></td>
          <td><%=s.address%></td>
          <td><a href="edit-student?id=<%=s.getId()%>">Edit</a></td>
+         <td><a class="text-danger" onclick="deleteStudent(<%=s.getId()%>)" href="javascript:void(0);">Delete</a></td>
      </tr>
      <%}%>
      </tbody>
  </table>
+ <script type="text/javascript">
+     function deleteStudent(id) {
+         var url = `list-student?id=`+id;
+         fetch(url,{
+             method: 'DELETE'
+             // body: formData
+         }).then(rs=>{
+             if(confirm("Reload page?"))
+                 window.location.reload();
+         }).error(err=>{
+             alert(err)
+         })
+     }
+ </script>
 </body>
 </html>

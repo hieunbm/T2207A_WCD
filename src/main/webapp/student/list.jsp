@@ -1,4 +1,4 @@
-<%@ page import="com.entities.Student" %>
+<%@ page import="wcd.jpa.entities.Student" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -14,6 +14,7 @@
 </head>
 <body>
  <jsp:include page="/layout/header.jsp"/>
+ <a href="create-student"></a>
  <table class="table">
      <thead>
      <tr>
@@ -21,6 +22,7 @@
          <th scope="col">Name</th>
          <th scope="col">Email</th>
          <th scope="col">Address</th>
+         <th scope="col">Action</th>
      </tr>
      </thead>
      <tbody>
@@ -30,6 +32,7 @@
          <td><%= s.name%></td>
          <td><%= s.email%></td>
          <td><%=s.address%></td>
+         <td><a href="edit-student?id=<%=s.getId()%>">Edit</a></td>
      </tr>
      <%}%>
      </tbody>

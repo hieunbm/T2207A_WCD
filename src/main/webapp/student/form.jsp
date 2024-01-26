@@ -1,4 +1,4 @@
-<%@ page import="com.entities.Student" %>
+<%@ page import="wcd.jpa.entities.Student" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: quanghoatrinh
@@ -19,7 +19,7 @@
   <!--  Table students -->
   <div class="row">
     <div class="col-6">
-      <form method="post" action="create">
+      <form method="post" action="create-student">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Full name</label>
           <input type="text" name="name" class="form-control" aria-describedby="emailHelp"/>

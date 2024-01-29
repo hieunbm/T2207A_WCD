@@ -7,8 +7,9 @@
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/T2207A_WCD_war_exploded" class="nav-link px-2 text-white">Home</a></li>
-                <li><a href="/T2207A_WCD_war_exploded/student" class="nav-link px-2 text-white">Student</a></li>
-                <li><a href="/T2207A_WCD_war_exploded/create" class="nav-link px-2 text-white">Create</a></li>
+                <li><a href="/T2207A_WCD_war_exploded/list-student" class="nav-link px-2 text-white">Student</a></li>
+                <li><a href="/T2207A_WCD_war_exploded/create-student" class="nav-link px-2 text-white">Create</a></li>
+                <li><a href="/T2207A_WCD_war_exploded/list-class" class="nav-link px-2 text-white">Class</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

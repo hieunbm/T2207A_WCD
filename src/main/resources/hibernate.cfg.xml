@@ -16,5 +16,6 @@
 <!--        <property name="hibernate.hbm2ddl.auto">create-drop</property>-->
 <!--        can use 'create-drop' = 'create' or 'update'-->
         <mapping class="wcd.jpa.entities.Student" />
+        <mapping class="wcd.jpa.entities.Classes" />
     </session-factory>
 </hibernate-configuration>

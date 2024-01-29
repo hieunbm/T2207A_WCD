@@ -22,6 +22,7 @@
          <th scope="col">Name</th>
          <th scope="col">Email</th>
          <th scope="col">Address</th>
+         <th scope="col">Classes</th>
          <th scope="col">Action</th>
          <th scope="col">Action</th>
      </tr>
@@ -29,10 +30,11 @@
      <tbody>
      <% for (Student s : (List<Student>)request.getAttribute("students")){ %>
      <tr>
-         <th scope="row"><%= s.id %></th>
-         <td><%= s.name%></td>
-         <td><%= s.email%></td>
-         <td><%=s.address%></td>
+         <th scope="row"><%= s.getId() %></th>
+         <td><%= s.getName()%></td>
+         <td><%= s.getEmail()%></td>
+         <td><%=s.getAddress()%></td>
+         <td><%=s.getClasses().getName()%></td>
          <td><a href="edit-student?id=<%=s.getId()%>">Edit</a></td>
          <td><a class="text-danger" onclick="deleteStudent(<%=s.getId()%>)" href="javascript:void(0);">Delete</a></td>
      </tr>

@@ -20,7 +20,7 @@ public class StudentController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try(Session session=sessionFactory.openSession()) {
             session.beginTransaction();
-            List<Student> list=session.createQuery("FROM Student ",Student.class).getResultList();
+            List<Student> list=session.createQuery("SELECT s FROM Student s JOIN FETCH s.classes ",Student.class).getResultList();
             session.getTransaction().commit();
             req.setAttribute("students",list);
         }

@@ -44,6 +44,7 @@ public class StudentCreateController extends HttpServlet {
         }
         req.setAttribute("classesList",classesList);
         req.setAttribute("subjectList",subjectList);
+        req.getRequestDispatcher("student/form.jsp").forward(req,resp);
     }
 
     @Override
